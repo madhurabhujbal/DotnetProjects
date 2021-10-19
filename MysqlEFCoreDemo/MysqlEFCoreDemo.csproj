@@ -8,6 +8,7 @@
     <None Remove="MySql.EntityFrameworkCore" />
     <None Remove="Data\" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.5" />
@@ -22,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Data\MyDbContext.cs">

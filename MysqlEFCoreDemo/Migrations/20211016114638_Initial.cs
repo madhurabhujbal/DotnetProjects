@@ -13,10 +13,10 @@ namespace MysqlEFCoreDemo.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(type: "text", nullable: true),
-                    LastName = table.Column<string>(type: "text", nullable: true),
-                    Age = table.Column<int>(type: "int", nullable: false),
-                    IsPlayer = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    FirstName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
+                    LastName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
+                    Age = table.Column<short>(type: "tinyint(1)", nullable: false),
+                    IsPlayer = table.Column<short>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

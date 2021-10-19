@@ -8,7 +8,7 @@ using MysqlEFCoreDemo.Data;
 namespace MysqlEFCoreDemo.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20211014210249_Initial")]
+    [Migration("20211016114638_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,17 +24,19 @@ namespace MysqlEFCoreDemo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("IsPlayer")
+                    b.Property<short>("Age")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("FirstName")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<short>("IsPlayer")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
