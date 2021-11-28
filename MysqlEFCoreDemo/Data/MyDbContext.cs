@@ -17,7 +17,7 @@ namespace MysqlEFCoreDemo.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Person>(e => e.Property(o => o.Age).HasColumnType("tinyint(1)").HasConversion<short>());
+            modelBuilder.Entity<Person>(e => e.Property(o => o.Age).HasColumnType("tinyint(3)").HasConversion<short>());
             modelBuilder.Entity<Person>(e => e.Property(o => o.IsPlayer).HasConversion(new BoolToZeroOneConverter<short>()).HasColumnType("bit"));
         }
     }
